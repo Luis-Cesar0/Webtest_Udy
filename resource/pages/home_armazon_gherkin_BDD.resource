@@ -8,25 +8,27 @@ ${meunu_eletronico}                      xpath=//a[contains(.,'Eletrônicos')]
 
 
 *** Keywords ***
-Acessar a home page do site Amazon.com.br
+Dado que estou na home page da Amazon.com.br
         Go To                            ${amazon}
         Wait Until Element Is Visible    ${meunu_eletronico}
 
-Entrar no menu "Eletrônicos"
+Quando acessar o menu "Eletrônicos"
     Click Element                        ${meunu_eletronico}
 
-Verificar se aparece a frase "${texto}"
-    Wait Until Page Contains             ${texto}
-Verificar se o título da página fica "${titulo}"
+
+Então o título da página deve ficar "${titulo}"
     Title Should Be                      ${titulo}
 
-Verificar se aparece a categoria "Computadores e Informática"
-    Element Should Be Visible     xpath=(//a[@aria-label="Computadores e Informática"])[2]   
+E o texto "${texto}" deve ser exibido na página 
+    Wait Until Page Contains             ${texto}
 
-Digitar o nome de produto "${Produto}" no campo de pesquisa
+E a categoria "Computadores e Informática" deve ser exibida na página
+    Element Should Be Visible     xpath=(//a[@aria-label="Computadores e Informática"])[2] 
+
+Quando pesquisar pelo produto "${Produto}" 
     Input Text    css=input[id="twotabsearchtextbox"]    ${Produto}
-Clicar no botão de pesquisa
     Click Element    css=input[id="nav-search-submit-button"]
-Verificar o resultado da pesquisa se estar listando o produto "${Pesquisar}" pesquisado
+
+E um produto da linha "${Pesquisar}" deve ser mostrado na página 
     Wait Until Element Is Visible    //span[@class='a-color-state a-text-bold'][contains(.,'"${Pesquisar}"')]
     

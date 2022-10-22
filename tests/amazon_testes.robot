@@ -17,9 +17,10 @@ Acesso ao menu "Eletrônicos"
     Verificar se o título da página fica "Eletrônicos e Tecnologia | Amazon.com.br"
     Verificar se aparece a categoria "Computadores e Informática"
 
-# Pesquisa de um Produto
-#     [Documentation]    Esse teste verifica a busca de um produto
-#     Acessar a home page do site Amazon.com.br
-#     Digitar o nome de produto "Xbox Series S" no campo de pesquisa
-#     Clicar no botão de pesquisa
-#     Verificar o resultado da pesquisa se estar listando o produto pesquisado
+Pesquisa de um Produto
+    [Tags]    busca
+    [Documentation]    Esse teste verifica a busca de um produto
+    Acessar a home page do site Amazon.com.br
+    Digitar o nome de produto "Xbox Series S" no campo de pesquisa
+    Clicar no botão de pesquisa
+    Verificar o resultado da pesquisa se estar listando o produto "Xbox Series S" pesquisado
