@@ -23,7 +23,7 @@ E o texto "${texto}" deve ser exibido na página
     Wait Until Page Contains             ${texto}
 
 E a categoria "Computadores e Informática" deve ser exibida na página
-    Element Should Be Visible     xpath=(//a[@aria-label="Computadores e Informática"])[2] 
+    Element Should Be Visible     //span[@dir='auto'][contains(.,'Computadores e Informática')] 
 
 Quando pesquisar pelo produto "${Produto}" 
     Input Text    css=input[id="twotabsearchtextbox"]    ${Produto}

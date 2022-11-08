@@ -21,7 +21,7 @@ Verificar se o título da página fica "${titulo}"
     Title Should Be                      ${titulo}
 
 Verificar se aparece a categoria "Computadores e Informática"
-    Element Should Be Visible     xpath=(//a[@aria-label="Computadores e Informática"])[2]   
+    Element Should Be Visible     //span[@dir='auto'][contains(.,'Computadores e Informática')]   
 
 Digitar o nome de produto "${Produto}" no campo de pesquisa
     Input Text    css=input[id="twotabsearchtextbox"]    ${Produto}
